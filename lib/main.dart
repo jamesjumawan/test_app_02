@@ -58,14 +58,63 @@ class _MyHomePageState extends State<MyHomePage> {
               "${counter.count}",
               style: Theme.of(context).textTheme.headlineMedium,
             ),
+            ElevatedButton(
+              onPressed: () {
+                setState(() {
+                  counter.incrementCount();
+                });
+              },
+              child: const Row(
+                children: [Icon(Icons.add), Text("Increment")],
+              ),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                setState(() {
+                  counter.decrementCount();
+                });
+              },
+              child: const Row(
+                children: [Icon(Icons.remove), Text("Decrement")],
+              ),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                setState(() {
+                  counter.reset();
+                });
+              },
+              child: const Row(
+                children: [Icon(Icons.replay), Text("Reset")],
+              ),
+            ),
+            // IconButton(
+            //   onPressed: () {
+            //     setState(() {
+            //       counter.incrementCount();
+            //     });
+            //   },
+            //   icon: const Icon(Icons.add),
+            // ),
+            // IconButton(
+            //   onPressed: () {
+            //     setState(() {
+            //       counter.decrementCount();
+            //     });
+            //   },
+            //   icon: const Icon(Icons.remove),
+            // ),
+            // IconButton(
+            //   onPressed: () {
+            //     setState(() {
+            //       counter.reset();
+            //     });
+            //   },
+            //   icon: const Icon(Icons.replay),
+            // ),
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: counter.incrementCount,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }

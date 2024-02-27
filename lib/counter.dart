@@ -1,14 +1,11 @@
 class Counter {
-  late int _count;
-
-  Counter() {
-    _count = 0;
-  }
+  int _count = 0;
+  int _increment = 1;
 
   int get count => _count;
 
   void incrementCount() {
-    _count++;
+    _count += _increment++;
   }
 
   void decrementCount() {
